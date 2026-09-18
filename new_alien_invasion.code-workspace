@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "new_alien_invasion",
+			"path": "."
+		},
+		{
+			"name": "images",
+			"path": "../../Downloads/pcc_3e-main/chapter_12/shooting_bullets/images"
+		}
+	],
+	"settings": {
+		"python-envs.defaultEnvManager": "ms-python.python:system"
+	}
+}
