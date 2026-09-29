@@ -29,7 +29,8 @@ class AlienInvasion:
         self.aliens = pygame.sprite.Group()
         self._create_fleet()
         #Start Alien Invasion in an active state
-        self.game_active = True
+        self.game_active = False
+
 
     def run_game(self):
         """Start the main loop for the game."""
