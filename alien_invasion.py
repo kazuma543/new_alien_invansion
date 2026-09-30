@@ -80,6 +80,7 @@ class AlienInvasion:
 
             #Hide the mouse cursor.
             pygame.mouse.set_visible(False)
+
     def _check_keydown_events(self, event):
         """Respond to keypresses"""
         if event.key == pygame.K_RIGHT:
@@ -90,6 +91,7 @@ class AlienInvasion:
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
+
     def _check_keyup_events(self,event):
         """Respond to key release."""
         if event.key == pygame.K_RIGHT:
@@ -120,6 +122,8 @@ class AlienInvasion:
             self.bullets, self.aliens, True, True)
         
         if collisons:
+            for aliens in collisons.values():
+                self.stats.score += self.settings.alien_points * len(aliens)
             self.stats.score += self.settings.alien_points
             self.sb.prep_score()
         if not self.aliens:
@@ -144,6 +148,7 @@ class AlienInvasion:
             #Finished a row; reset x value, and increment y value.
             current_x = alien_width
             current_y += 2* alien_height
+
     def _create_alien(self, x_position, y_position):
         """Create an alien and place it in the row."""
         new_alien = Alien(self)
